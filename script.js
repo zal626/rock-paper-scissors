@@ -1,50 +1,53 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay(){
     const computerOptions = ['rock', 'paper', 'scissor'];
-    const computerPick = Math.floor(Math.random() * 3);
-    const computerChoice = computerOptions[computerPick];
-    return computerChoice;
+    return computerOptions[Math.floor(Math.random() * computerOptions.length)];
 }
 
 function playRound (playerSelection, computerSelection){
-    const tie = 'It is a tie!';
-    const computerWin = 'Computer win this round!';
-    const playerWin = 'Player win this round!';
-
     if (computerSelection === playerSelection){
-        return tie;
-    }
-    if(playerSelection === 'rock'){
+        playerScore;
+        computerScore;
+    }else if(playerSelection === 'rock'){
         if(computerSelection === 'paper'){
-            return computerWin;
+            computerScore++;      
+        }else{
+            playerScore++;     
         }
-        else{
-            return playerWin;
+    }else if(playerSelection === 'scissor'){
+        if(computerSelection === 'rock'){
+            computerScore++;    
+        }else{
+            playerScore++;      
         }
-    }
-    if(playerSelection === 'scissor'){
-        if(computerSelection === 'paper'){
-            return playerWin;
-        }
-        else{
-            return computerWin;
-        }
-    }
-    if(playerSelection === 'paper'){
+    }else if(playerSelection === 'paper'){
         if(computerSelection === 'scissor'){
-            return computerWin;
+            computerScore++; 
+        }else{
+            playerScore++;
         }
-        else{
-            return playerWin;
-        }
-    }
-    else{
-        return 'Invalid input!';
     }
 }
-const playerSelection = prompt('Do you choose rock, paper, or scissor?').toLowerCase();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
 
 function game(){
-
+    let gameRounds = 0;
+    for(i = 0; i < 5; i++){
+        const playerSelection = prompt('Do you choose rock, paper, or scissor?', 'rock').toLowerCase();
+        gameRounds += playRound(playerSelection, computerPlay());
+        console.log(`Round ` + (i + 1));
+        console.log(`Your score is: ${playerScore}`);
+        console.log(`The computer score is: ${computerScore}`);
+    }
+    if (playerScore > computerScore){
+        console.log(`You won the game!`);
+    }else if (computerScore > playerScore){
+        console.log(`Computer have won!`);
+    }else{
+        console.log('No one wins!');
+    }
 }
+game();
+
+
