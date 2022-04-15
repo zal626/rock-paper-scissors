@@ -8,30 +8,43 @@ function computerPlay(){
 
 function playRound (playerSelection, computerSelection){
     if (computerSelection === playerSelection){
-        playerScore;
-        computerScore;
+        roundResult.textContent = 'It\'s a tie!';
     }else if(playerSelection === 'rock'){
         if(computerSelection === 'paper'){
-            computerScore++;      
+            computerScore++; 
+            roundResult.textContent = 'Computer wins! Paper beats rock';    
         }else{
-            playerScore++;     
+            playerScore++;    
+            roundResult.textContent = 'Player wins! Rock beats scissor'; 
         }
     }else if(playerSelection === 'scissor'){
         if(computerSelection === 'rock'){
-            computerScore++;    
+            computerScore++;   
+            roundResult.textContent = 'Computer wins! Rock beats scissor';  
         }else{
-            playerScore++;      
+            playerScore++;   
+            roundResult.textContent = 'Player wins! Scissor beats paper';   
         }
     }else if(playerSelection === 'paper'){
         if(computerSelection === 'scissor'){
             computerScore++; 
+            roundResult.textContent = 'Computer wins! Scissor beats paper'; 
         }else{
             playerScore++;
+            roundResult.textContent = 'Player wins! Paper beats rock'; 
         }
     }
 }
-
-function game(){
+const roundResult = document.getElementById('#round-result');
+const rockBtn = document.querySelector('.rock');
+const paperBtn = document.querySelector('.paper');
+const scissorBtn = document.querySelector('.scissor');
+const playerSelection = [rockBtn, paperBtn, scissorBtn];
+playerSelection.forEach(selection =>{
+    selection.addEventListener('click', playRound(playerSelection, computerPlay()))
+});
+console.log(playRound);
+/*function game(){
     let gameRounds = 0;
     for(i = 0; i < 5; i++){
         const playerSelection = prompt('Do you choose rock, paper, or scissor?', 'rock').toLowerCase();
@@ -48,6 +61,6 @@ function game(){
         console.log('No one wins!');
     }
 }
-game();
+game();*/
 
 
