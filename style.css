@@ -11,10 +11,9 @@ body{
     font-family: Roboto, sans-serif;
 }
 h1{
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'Press Start 2P', Roboto, sans-serif;
     font-weight: 700;
     font-size: 42px;
-    color: #ff79c6;
     text-align: center;
     padding: 1em auto;
 }
@@ -22,3 +21,32 @@ img{
     width: 150px;
     height: auto;
 }
+.score-board{
+    font-family: 'Press Start 2P';
+    border: 3px solid #bd93f9;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 32px auto 50px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.score-board h2{
+    text-align: center;
+    font-size: 36px;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.barrier{
+    border-left: 3px solid #bd93f9;
+}
+.player,
+.computer{
+    font-size: 24px;
+    line-height: 1.6;
+    text-align: center;
+}
+
