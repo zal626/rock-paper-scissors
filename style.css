@@ -27,7 +27,7 @@ img{
     border-radius: 5px;
     max-width: 500px;
     margin: 32px auto 50px;
-    padding: 1em;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -48,5 +48,14 @@ img{
     font-size: 24px;
     line-height: 1.6;
     text-align: center;
+}
+.result{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+.choices{
+    margin: 2em auto;
+    max-width: 500px;
 }
 
