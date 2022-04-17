@@ -22,7 +22,12 @@ body{
     text-align: center;
 }
 .choices{
-    width: 150px;
+    width: 175px;
+    height: auto;
+}
+#player-move,
+#computer-move{
+    width: 100px;
     height: auto;
 }
 .score-board{
@@ -33,7 +38,7 @@ body{
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1em;
 }
 .score-board h2{
     text-align: center;
@@ -59,7 +64,12 @@ body{
 #computer-score{
     font-size: 3rem;
 }
-.choices-container{
+.move-barrier{
+    font-family: Roboto, sans-serif;
+    font-size: 4rem;
+}
+.choices-container,
+.move-container{
     margin: 1em auto;
     max-width: 500px;
     display: flex;

@@ -6,6 +6,10 @@ function computerPlay(){
     const computerOptions = ['rock', 'paper', 'scissor'];
     return computerOptions[Math.floor(Math.random() * computerOptions.length)];
 }
+function moveUpdate(playerSelection, computerSelection){
+    document.getElementById('player-move').src = `./images/${playerSelection}.png`;
+    document.getElementById('computer-move').src = `./images/${computerSelection}.png`;
+}
 function playRound(playerSelection, computerSelection){
     if (computerSelection === playerSelection){
         roundResult.textContent = 'It\'s a tie!';
@@ -40,6 +44,7 @@ choices.forEach((choice) => {
     choice.addEventListener('click', () => { 
         const playerChoice = choice.id;
         playRound(playerChoice, computerPlay());
+        moveUpdate(playerChoice, computerPlay());
         scoreUpdate();
         if(checkWinner()){
             playerScore = computerScore = 0;
