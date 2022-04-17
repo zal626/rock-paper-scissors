@@ -8,21 +8,24 @@
 body{
     background-color: #282a36;
     color: #f8f8f2;
-    font-family: Roboto, sans-serif;
-}
-h1{
     font-family: 'Press Start 2P', Roboto, sans-serif;
+}
+.header h1{
     font-weight: 700;
     font-size: 42px;
     text-align: center;
     padding: 1em auto;
 }
-img{
+.header h2{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+.choices{
     width: 150px;
     height: auto;
 }
 .score-board{
-    font-family: 'Press Start 2P';
     border: 3px solid #bd93f9;
     border-radius: 5px;
     max-width: 500px;
@@ -56,16 +59,17 @@ img{
 #computer-score{
     font-size: 3rem;
 }
-.result{
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 5em;
-}
-.choices{
-    margin: 2em auto;
+.choices-container{
+    margin: 1em auto;
     max-width: 500px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
+.result{
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1em;
+}
+
 
