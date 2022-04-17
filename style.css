@@ -30,11 +30,11 @@ img{
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.5em;
 }
 .score-board h2{
     text-align: center;
-    font-size: 36px;
+    font-size: 2rem;
 }
 .container{
     display: flex;
@@ -48,14 +48,24 @@ img{
     font-size: 24px;
     line-height: 1.6;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+#player-score,
+#computer-score{
+    font-size: 3rem;
 }
 .result{
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
+    margin-top: 5em;
 }
 .choices{
     margin: 2em auto;
     max-width: 500px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
