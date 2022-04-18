@@ -6,13 +6,9 @@ function computerPlay(){
     const computerOptions = ['rock', 'paper', 'scissor'];
     return computerOptions[Math.floor(Math.random() * computerOptions.length)];
 }
-function moveUpdate(playerSelection, computerSelection){
-    document.getElementById('player-move').src = `./images/${playerSelection}.png`;
-    document.getElementById('computer-move').src = `./images/${computerSelection}.png`;
-}
 function playRound(playerSelection, computerSelection){
     if (computerSelection === playerSelection){
-        roundResult.textContent = 'It\'s a tie!';
+        roundResult.textContent = `It's a tie! ${computerSelection} vs ${playerSelection}`;
     }else if(playerSelection === 'rock'){
         if(computerSelection === 'paper'){
             roundResult.textContent = 'Computer wins! Paper beats rock';  
@@ -44,26 +40,41 @@ choices.forEach((choice) => {
     choice.addEventListener('click', () => { 
         const playerChoice = choice.id;
         playRound(playerChoice, computerPlay());
-        moveUpdate(playerChoice, computerPlay());
-        scoreUpdate();
-        if(checkWinner()){
-            playerScore = computerScore = 0;
-            scoreUpdate();
+        updateScores();
+       if(checkWinner()){
+            gameOver();
         }
     }); 
 });
-function scoreUpdate () {
+function updateScores(){
     document.getElementById("player-score").textContent = playerScore;
     document.getElementById("computer-score").textContent = computerScore;
 }
 function checkWinner(){
     if (playerScore === 5 || computerScore === 5) {
-        const winner = playerScore === 5 ? "You have won the game!" : "Computer won the game! Better luck next time.";
+        const winner = playerScore === 5 ? "You won the game!" : "Computer won! Better luck next time.";
         roundResult.textContent = winner;
         return true;
     }
     return false;
 }
+function gameOver(){
+    const message = document.querySelector('#message');
+    const restart = document.querySelector('.restart');
+    const roundResult = document.querySelector('#round-result');
+    choices.forEach((choice) => { choice.style.display = 'none';})
+    message.innerText = 'Game Over!';
+    message.style.fontSize = '2rem';
+    if(checkWinner()){
+        roundResult.style.fontSize = '1rem';
+    }
+    restart.style.display = 'flex';
+    restart.addEventListener('click', () => {
+        window.location.reload();
+    });
+}
+
+
 
 
 
