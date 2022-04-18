@@ -25,11 +25,6 @@ body{
     width: 175px;
     height: auto;
 }
-#player-move,
-#computer-move{
-    width: 100px;
-    height: auto;
-}
 .score-board{
     border: 3px solid #bd93f9;
     border-radius: 5px;
@@ -64,12 +59,7 @@ body{
 #computer-score{
     font-size: 3rem;
 }
-.move-barrier{
-    font-family: Roboto, sans-serif;
-    font-size: 4rem;
-}
-.choices-container,
-.move-container{
+.choices-container{
     margin: 1em auto;
     max-width: 500px;
     display: flex;
@@ -80,6 +70,18 @@ body{
     font-weight: 600;
     text-align: center;
     margin-top: 1em;
+}
+.restart{
+    display: none;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: #50fa7b;
+    margin: 1em auto;
+    padding: 1em;
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    color: #282a36;
 }
 
 

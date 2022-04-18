@@ -13,41 +13,29 @@
         <h1><span style="color:#ff79c6;">Rock</span><span style="color:#f1fa8c;">Paper</span><span style="color: #8be9fd;">Scissor</span></h1>
         <h2>Get a score of 5 to win the game</h2>
     </header>
+    <main>
         <div class="score-board">
             <h2>Scoreboard</h2>
             <div class="container">
-            <div class="player">Player
-                
+            <div class="player">Player   
                 <p id="player-score">0</p>
             </div>
             <div class="barrier"></div>
-            <div class="computer">Computer
-                
+            <div class="computer">Computer     
                 <p id="computer-score">0</p>
             </div>
             </div>      
         </div>  
-        <div class="move-container">
-            <div class="player-move">
-                <img id="player-move" src="./images/rock.png" alt="rock">
-            </div>
-            <div class="move-barrier">
-                VS
-            </div>
-            <div class="computer-move">
-                <img id="computer-move" src="./images/rock.png" alt="rock">
-            </div>
-        </div>
         <div class="result">
-            <p id="round-result"></p>
-            <p id="result-msg">Make your move</p>
+            <p id="message">Make your move</p>
+            <p id="round-result"></p>      
+            <button class="restart">Try Again</button>
         </div>
         <div class="choices-container">         
             <img class="choices" id="rock" src="./images/rock.png" alt="rock">   
             <img class="choices" id="paper" src="./images/paper.png" alt="paper">          
             <img class="choices" id="scissor" src="./images/scissor.png" alt="scissor">       
-        </div>
-    
-    
+        </div> 
+    </main>  
 </body>
 </html>
